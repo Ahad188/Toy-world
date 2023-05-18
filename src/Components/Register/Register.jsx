@@ -2,13 +2,31 @@
 import { FaEnvelope, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Register = () => {
+     const handelRegister= (e)=>{
+          e.preventDefault()
+          const from = e.target;
+          const name = from.name.value;
+          const email = from.email.value;
+          const password = from.password.value;
+          const photho = from.photo.value;
+          const regi = {name,email,password,photho}
+          console.log(regi);
+     }
      return (
           <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
           <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
               <h1 className="text-3xl font-semibold text-center text-teal-400 ">
                   Please Register
               </h1>
-              <form  className="mt-6">
+              <form onSubmit={handelRegister} className="mt-6">
+                  <div className="mb-2">
+                  <label htmlFor="name" className="block text-xl font-semibold text-gray-800">Name:</label>
+                      <input
+                          type="name"
+                          id="name"
+                          className="block w-full px-4 py-2 mt-2 text-black-700 bg-white border rounded-md focus:border-teal-400 focus:ring-teal-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                      />
+                  </div>
                   <div className="mb-2">
                   <label htmlFor="email" className="block text-xl font-semibold text-gray-800">Email:</label>
                       <input
@@ -22,6 +40,14 @@ const Register = () => {
                       <input
                           type="password"
                           id="password"
+                          className="block w-full px-4 py-2 mt-2 text-teal-700 bg-white border rounded-md focus:border-teal-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                      />
+                  </div>
+                  <div className="mb-2">
+                       <label htmlFor="photo" className="block text-xl font-semibold text-gray-800">Photo url:</label>
+                      <input
+                          type="url"
+                          id="photo"
                           className="block w-full px-4 py-2 mt-2 text-teal-700 bg-white border rounded-md focus:border-teal-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                   </div>

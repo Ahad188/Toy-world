@@ -10,6 +10,7 @@ const Header = () => {
                     <nav>
                     <ul className='md:flex justify-evenly al'>
                          <li><Link className='mr-10 text-2xl font-bold' to="/">Home</Link></li>
+                         <li><Link className='mr-10 text-2xl font-bold' to="/allToys">All-Toys</Link></li>
                          <li><Link className='mr-10 text-2xl font-bold' to='/blog'>Blog</Link></li>
                          <li><Link className='mr-10 text-2xl font-bold' to="/login">Login</Link></li>
                     </ul>

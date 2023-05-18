@@ -4,6 +4,7 @@ import Home from "../Components/Home/Home";
 import Blog from "../Components/Blog/Blog";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import AllToys from "../Components/AllToys/AllToys";
 
 const router = createBrowserRouter([
      {
@@ -13,6 +14,11 @@ const router = createBrowserRouter([
           {
                path:'/',
                element:<Home></Home>
+          },
+          {
+               path:'allToys',
+               element:<AllToys></AllToys>,
+               // loader:()=>fetch('../../public/fake.json')
           },
           {
                path:'/blog',
