@@ -1,7 +1,10 @@
  
+import { useContext } from "react";
 import { FaEnvelope, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Register = () => {
+     const { createUser} = useContext(AuthContext)
      const handelRegister= (e)=>{
           e.preventDefault()
           const from = e.target;
@@ -11,6 +14,13 @@ const Register = () => {
           const photho = from.photo.value;
           const regi = {name,email,password,photho}
           console.log(regi);
+          createUser(email,password)
+          .then(result => {
+               const Cuser = result.user;
+               console.log(Cuser);
+          })
+          .catch(err=>console.log(err))
+
      }
      return (
           <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
@@ -67,12 +77,7 @@ const Register = () => {
                   <div className="absolute px-5 bg-white">Or</div>
               </div>
               <div className="flex mt-4 gap-x-2">
-                  <button
-                      type="button"
-                      className="flex text-3xl items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-teal-600"
-                  >
-                    <FaEnvelope/> Email
-                  </button>
+                   
                   <button
                       type="button"
                       className="flex text-3xl items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-teal-600"

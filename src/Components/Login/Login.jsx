@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import { FaEnvelope, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
  
 
 const Login = () => {
+     const {singIn,googleSing,} = useContext(AuthContext)
      const handelLogin=(e)=>{
           e.preventDefault()
           const from = e.target;
@@ -10,6 +13,22 @@ const Login = () => {
           const password = from.password.value;
           const userLogin = {email,password}
           console.log(userLogin);
+          singIn(email,password)
+          .then(result =>{
+               const user = result.user;
+               console.log(user);
+          })
+          .catch(err=>console.log(err))
+     }
+     const handelGoogleLOgin=()=>{
+          // console.log("google click");
+          googleSing()
+          .then(result=>{
+               const guser = result.user;
+               console.log(guser);
+                
+          })
+          .catch(err=>console.log(err))
      }
      return (
           <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
@@ -50,13 +69,9 @@ const Login = () => {
                   <div className="absolute px-5 bg-white">Or</div>
               </div>
               <div className="flex mt-4 gap-x-2">
+                  
                   <button
-                      type="button"
-                      className="flex text-3xl items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-teal-600"
-                  >
-                    <FaEnvelope/> Email
-                  </button>
-                  <button
+                  onClick={handelGoogleLOgin}
                       type="button"
                       className="flex text-3xl items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-teal-600"
                   >

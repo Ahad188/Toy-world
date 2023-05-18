@@ -1,7 +1,14 @@
  import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.jpg'
  import './header.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+ 
+ 
+ 
 const Header = () => {
+      const {user} = useContext(AuthContext)
+      console.log(user);
      return (
            <section className='header-section'>
                <div className='header'>
