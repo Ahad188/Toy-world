@@ -1,6 +1,6 @@
 [
      {
-       "id": 1,
+        
        "salerName": "John",
        "toyName": "Iron Men",
        "subcategory": "marvel",
@@ -11,7 +11,7 @@
        "rating": 4.5
      },
      {
-       "id": 2,
+       
        "salerName": "Emily",
        "toyName": "Hulk",
        "subcategory": "marvel",
@@ -22,7 +22,7 @@
        "rating": 4.2
      },
      {
-       "id": 3,
+      
        "salerName": "Mike",
        "toyName": "Captain",
        "subcategory": "marvel",
@@ -33,7 +33,7 @@
        "rating": 4.8
      },
      {
-       "id": 4,
+       
        "salerName": "Sarah",
        "toyName": "Spider Men",
        "subcategory": "avengers",
@@ -44,7 +44,7 @@
        "rating": 4.0
      },
      {
-       "id": 5,
+        
        "salerName": "David",
        "toyName": "Black Panther",
        "subcategory": "avengers",
@@ -55,7 +55,7 @@
        "rating": 4.7
      },
      {
-       "id": 6,
+        
        "salerName": "Emma",
        "toyName": "Spider set",
        "subcategory": "avengers",
@@ -66,7 +66,7 @@
        "rating": 4.3
      },
      {
-       "id": 7,
+       
        "salerName": "Michael",
        "toyName": "Dtr_avenger",
        "subcategory": "transformers",
@@ -77,7 +77,7 @@
        "rating": 4.6
      },
      {
-       "id": 8,
+      
        "salerName": "Olivia",
        "toyName": "Iron",
        "subcategory": "transformers",
@@ -88,7 +88,7 @@
        "rating": 4.4
      },
      {
-       "id": 9,
+       
        "salerName": "Daniel",
        "toyName": "Super men",
        "subcategory": "transformers",
@@ -99,7 +99,7 @@
        "rating": 4.1
      },
      {
-       "id": 10,
+       
        "salerName": "Sophia",
        "toyName": " Dampal",
        "subcategory": "Figures",
