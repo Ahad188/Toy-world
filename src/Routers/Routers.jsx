@@ -6,6 +6,7 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import AllToys from "../Components/AllToys/AllToys";
 import DetailsCard from "../Components/DetailsCard/DetailsCard";
+import Private from "../Private/Private";
 
 const router = createBrowserRouter([
      {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
           },
           {
                path:'/details/:id',
-               element:<DetailsCard></DetailsCard>,
+               element:<Private><DetailsCard></DetailsCard></Private>,
                loader:({params})=>fetch(`http://localhost:5000/alltoys/${params.id}`)
           },
           {

@@ -9,25 +9,29 @@ import app from "../Firebase/firebase";
  const AuthProvider = ({children}) => {
      const auth = getAuth(app)
      const [user, setUser] = useState(null);
+     const [loading,setLoading]= useState(true)
      const googleProvider = new GoogleAuthProvider();
 
      const createUser = (email,password)=>{
+          setLoading(true)
           return createUserWithEmailAndPassword(auth,email,password)
      }
      const singIn = (email,password)=>{
+          setLoading(true)
           return signInWithEmailAndPassword(auth,email,password)
      }
      const googleSing=()=>{
           return signInWithPopup(auth,googleProvider)
      }
      const logOut =()=>{
+          setLoading(true)
           return signOut(auth)
      }
      useEffect(()=>{
           const unsubscribe = onAuthStateChanged(auth, loggedUser => {
               console.log('logged in user inside auth state observer', loggedUser)
               setUser(loggedUser);
-               // setLoading(false)
+               setLoading(true)
           })
   
           return () => {
@@ -37,6 +41,7 @@ import app from "../Firebase/firebase";
       
      const authinfo = {
           user,
+          loading,
           createUser,
           singIn,
           googleSing,
