@@ -1,12 +1,15 @@
+import AboutUs from "../AboutUs/AboutUs";
 import Banner from "../Banner/Banner";
+import Catagory from "../Catagory/Catagory";
 
  
 
 const Home = () => {
      return (
           <div className="container mx-auto">
-               <h1 className="text-center">This is a Home Paage</h1>
                <Banner></Banner>
+               <Catagory></Catagory>
+               <AboutUs></AboutUs>
           </div>
      );
 };

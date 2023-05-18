@@ -3,7 +3,7 @@ import './banner.css'
 const Banner = () => {
   return (
     <div
-      className="hero min-h-[400px] mb-10 banner "
+      className="hero min-h-[400px] mb-10 banner mt-5 "
     >
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
