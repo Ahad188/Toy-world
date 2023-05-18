@@ -1,13 +1,17 @@
  
+import { Outlet } from 'react-router-dom'
 import './App.css'
+import Footer from './Components/Footer/Footer'
+import Header from './Components/Header/Header'
 
 function App() {
    
 
   return (
     <>
-       <h2>Normal setap</h2>
-       
+        <Header></Header>
+       <Outlet></Outlet>
+       <Footer></Footer>
     </>
   )
 }

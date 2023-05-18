@@ -1,0 +1,23 @@
+ .header-section{
+     max-width: 1640px;
+     margin: 0 auto;
+     background-color: #b4c0c0;
+ }
+ .logo{
+     width: 100px;
+     height: 100px;
+     padding: 15px;
+     border-radius: 50px;
+ }
+ .header{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+  
+@media screen and (min-width:370px) {
+     .header-section{
+          width: 100%;
+     }
+      
+}
