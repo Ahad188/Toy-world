@@ -9,7 +9,7 @@ import im from '../../assets/Team/emty.jpg'
  
 const Header = () => {
       const {user,logOut} = useContext(AuthContext)
-      console.log(user);
+     //  console.log(user);
      const handelLogout=()=>{
           logOut()
           .then()
@@ -25,16 +25,22 @@ const Header = () => {
                          <li><Link className='mr-10 text-2xl font-bold' to="/">Home</Link></li>
                          <li><Link className='mr-10 text-2xl font-bold' to="/allToys">All-Toys</Link></li>
                          <li><Link className='mr-10 text-2xl font-bold' to="/addToys">Add-Toys</Link></li>
+                          
                          <li><Link className='mr-10 text-2xl font-bold' to='/blog'>Blog</Link></li>
+                         
+                         {
+                              user? <>
+                              <li><Link className='mr-10 text-2xl font-bold' to="/myToys">My-Toys</Link></li>
+                              <button className='mr-10 text-2xl font-bold' onClick={handelLogout}>LogOut</button>
+                              </>
+                              :<li><Link className='mr-10 text-2xl font-bold' to="/login">Login</Link></li>
+                         }
                          <li>
                               {
-                                   user ? <img className='h-10  w-10 rounded-full' src={user?.photoURL || im} alt="" /> :
+                                   user ? <img className='h-10  w-10 rounded-full' src={user?.photoURL} alt="" /> :
                                    <img className='h-10  w-10 rounded-full' src={im} alt="" />
                               }
                               </li>
-                         {
-                              user? <button className='mr-10 text-2xl font-bold' onClick={handelLogout}>LogOut</button>:<li><Link className='mr-10 text-2xl font-bold' to="/login">Login</Link></li>
-                         }
                     </ul>
                </nav>
                </div>

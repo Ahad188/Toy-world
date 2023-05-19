@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { FaFacebook,FaInstagram,FaTwitter,FaWhatsappSquare} from "react-icons/fa";
 const Footer = () => {
      return (
-          <footer className="footer p-10 bg-neutral text-neutral-content container mx-auto">
-          <div>
+          <footer className="footer p-10 bg-neutral text-neutral-content  mx-auto">
+          <div className=" ml-40">
             <span className="footer-title">Menu</span> 
             <Link to='/' className="link link-hover">Home</Link>
             <Link to='/alltoys' className="link link-hover">ALLTOYS</Link>

@@ -8,11 +8,14 @@ import AllToys from "../Components/AllToys/AllToys";
 import DetailsCard from "../Components/DetailsCard/DetailsCard";
 import Private from "../Private/Private";
 import AddToy from "../Components/AddToy/AddToy";
+import Mytoys from "../Components/Mytoys/Mytoys";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
      {
        path: "/",
        element: <App></App>,
+       errorElement:<ErrorPage></ErrorPage>,
        children:[
           {
                path:'/',
@@ -28,9 +31,14 @@ const router = createBrowserRouter([
                element:<Private><AddToy></AddToy></Private>,
           },
           {
+               path:'/mytoys',
+               element:<Private><Mytoys></Mytoys></Private>,
+          },
+          {
                path:'/details/:id',
                element:<Private><DetailsCard></DetailsCard></Private>,
-               loader:({params})=>fetch(`http://localhost:5000/alltoys/${params.id}`)
+               loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+                
           },
           {
                path:'/blog',

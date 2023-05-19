@@ -3,7 +3,7 @@
 const Catagory = () => {
      return (
           <div>
-               <h1>Catagory section</h1>
+               <h1 className="text-5xl text-center">Catagory section</h1>
           </div>
      );
 };

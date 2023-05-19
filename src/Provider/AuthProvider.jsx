@@ -9,7 +9,7 @@ import app from "../Firebase/firebase";
  const AuthProvider = ({children}) => {
      const auth = getAuth(app)
      const [user, setUser] = useState(null);
-     const [loading,setLoading]= useState(true)
+     const [loading,setLoading]= useState(false)
      const googleProvider = new GoogleAuthProvider();
 
      const createUser = (email,password)=>{
@@ -29,7 +29,7 @@ import app from "../Firebase/firebase";
      }
      useEffect(()=>{
           const unsubscribe = onAuthStateChanged(auth, loggedUser => {
-              console.log('logged in user inside auth state observer', loggedUser)
+          //     console.log('logged in user inside auth state observer', loggedUser)
               setUser(loggedUser);
                setLoading(true)
           })

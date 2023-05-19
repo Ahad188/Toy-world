@@ -9,7 +9,7 @@ import { useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
      const toys = useLoaderData()
-     console.log(toys);
+     // console.log(toys);
 
      //  const [toys, setToys] = useState([])
      // useEffect(()=>{

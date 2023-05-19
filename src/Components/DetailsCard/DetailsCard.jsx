@@ -2,8 +2,8 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const DetailsCard = () => {
   const data = useLoaderData();
-  const { photo, toyName, price, quantity, details, subcategory, salerName, _id } = data;
-  console.log(data);
+  const { photo, toyName, price, quantity, details, subcategory, salerName, } = data;
+//   console.log(data);
   return (
     <div className="container mx-auto mt-10 mb-40">
       <div className="card w-[600px] bg-base-100 shadow-xl mx-auto image-full">

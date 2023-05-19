@@ -1,16 +1,20 @@
+import { useContext } from "react";
+import { AuthContext } from '../../Provider/AuthProvider';
  
 
 const AddToy = () => {
+     const {user} = useContext(AuthContext)
      const handelAdd = (e)=>{
           e.preventDefault()
           const form  = e.target;
           const toyName = form.name.value;
+          const email = form.email.value;
           const subcategory = form.subcategory.value;
           const price = form.price.value;
           const quantity = form.quantity.value;
           const details = form.scrip.value;
           const photo = form.photo.value;
-          const addProduct = {toyName,subcategory,price,quantity,photo,details}
+          const addProduct = {toyName,subcategory,price,quantity,photo,details,email}
           console.log(addProduct);
           fetch('http://localhost:5000/alltoys',{
                method:'POST',
@@ -46,6 +50,15 @@ const AddToy = () => {
                       <input
                           type="sellerName"
                           id="sellerName"
+                          className="block w-full px-4 py-2 mt-2 text-black-700 bg-white border rounded-md focus:border-teal-400 focus:ring-teal-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                      />
+                  </div>
+                  <div className="mb-2">
+                  <label htmlFor="email" className="block text-xl font-semibold text-gray-800">Seller-Email:</label>
+                      <input
+                          type="email"
+                          id="email"
+                          defaultValue={user.email}
                           className="block w-full px-4 py-2 mt-2 text-black-700 bg-white border rounded-md focus:border-teal-400 focus:ring-teal-300 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                   </div>

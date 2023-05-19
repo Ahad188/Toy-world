@@ -5,6 +5,7 @@ const Toycard = ({toy}) => {
 // console.log(toy._id);
      // const {photo,toyName,price,quantity,details,subcategory,salerName,_id} = toy;
      const {photo,toyName,_id} = toy;
+     // console.log(_id,'details id');
   return (
     <div className="card w-96  shadow-xl bg-slate-300">
       <figure>
