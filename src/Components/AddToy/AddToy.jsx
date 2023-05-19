@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from '../../Provider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
  
 
 const AddToy = () => {
@@ -27,7 +29,9 @@ const AddToy = () => {
           .then(data=>{
                console.log(data);
                if(data.insertedId){
-                    alert('data added successful')
+                    // alert('data added successful')
+                    toast("Toy add to server")
+                    
                }
           })
 
@@ -108,6 +112,7 @@ const AddToy = () => {
                       <input type="submit" className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-teal-400 rounded-md hover:bg-teal-600 focus:outline-none focus:bg-teal-600" value="Submit" />
                   
               </form>
+              <ToastContainer />
                </div>
           </div>
      );
