@@ -1,15 +1,28 @@
+import { Link } from "react-router-dom";
+
  
 
 const ToyTable = ({toy,index}) => {
-     // console.log(toy);
+      
 
      const {toyName,price,quantity,_id} = toy;
-// console.log(toyName, price, quantity, _id);
+ 
      const handelDelate =(_id)=>{
           console.log(_id,"dellet this id");
-           
+          // fetch(`http://localhost:5000/toys/${_id}`,{
+          //      method:'PATCH',
+          //      headers:{
+          //           'content-type':'application/json'
+          //      },
+          //      body: JSON.stringify(data)
+          // })
+          //  .then(res=>res.json())
+          //  .then(data=>console.log(data))
 
           
+     }
+     const handelUpdate = (id)=>{
+          console.log(id);
      }
 
      return (
@@ -19,7 +32,7 @@ const ToyTable = ({toy,index}) => {
                <td>{toyName}</td>
                <td>{price}</td>
                <td>{quantity}</td>
-               <td>update</td>
+               <td className="cursor-pointer" onClick={()=>handelUpdate(_id)}><Link to='/update'>Update</Link></td>
                <td className="cursor-pointer" onClick={()=>handelDelate(_id)}>Dellet</td>
 
           </tr>

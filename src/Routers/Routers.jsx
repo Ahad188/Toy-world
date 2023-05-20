@@ -10,6 +10,7 @@ import Private from "../Private/Private";
 import AddToy from "../Components/AddToy/AddToy";
 import Mytoys from "../Components/Mytoys/Mytoys";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import Update from "../Components/Update/Update";
 
 const router = createBrowserRouter([
      {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
           {
                path:'/addtoys',
                element:<Private><AddToy></AddToy></Private>,
+          },
+          {
+               path:'/update',
+               element:<Update></Update>
           },
           {
                path:'/mytoys',
