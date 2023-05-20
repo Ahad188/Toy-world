@@ -16,7 +16,7 @@ const Update = () => {
           const quentity = from.quantity.value;
           const update ={name,price,quentity}
           console.log(update);
-           fetch(`http://localhost:5000/toys/${_id}`,{
+           fetch(`https://toy-server-sigma.vercel.app/toys/${_id}`,{
                method:'PATCH',
                headers:{
                     'content-type':'application/json'

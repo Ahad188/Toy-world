@@ -18,7 +18,7 @@ const AddToy = () => {
           const photo = form.photo.value;
           const addProduct = {toyName,subcategory,price,quantity,photo,details,email}
           console.log(addProduct);
-          fetch('http://localhost:5000/alltoys',{
+          fetch('https://toy-server-sigma.vercel.app/alltoys',{
                method:'POST',
                headers:{
                     "content-type" :"application/json"

@@ -7,7 +7,7 @@ const Mytoys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   // console.log(user.email);
-  const url = `http://localhost:5000/alltoys/${user?.email}`;
+  const url = `https://toy-server-sigma.vercel.app/alltoys/${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

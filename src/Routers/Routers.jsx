@@ -25,7 +25,7 @@ const router = createBrowserRouter([
           {
                path:'allToys',
                element:<AllToys></AllToys>,
-               loader:()=>fetch('http://localhost:5000/alltoys')
+               loader:()=>fetch('https://toy-server-sigma.vercel.app/alltoys')
           },
           {
                path:'/addtoys',
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
           {
                path:'/update/:id',
                element:<Update></Update>,
-               loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+               loader:({params})=>fetch(`https://toy-server-sigma.vercel.app/toys/${params.id}`)
           },
           {
                path:'/mytoys',
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
           {
                path:'/details/:id',
                element:<Private><DetailsCard></DetailsCard></Private>,
-               loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+               loader:({params})=>fetch(`https://toy-server-sigma.vercel.app/toys/${params.id}`)
                 
           },
           {
