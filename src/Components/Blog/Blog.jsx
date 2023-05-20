@@ -1,6 +1,7 @@
 const Blog = () => {
   return (
-    <section className="mt-10 container mx-auto">
+   <div className="w-[1640px] mx-auto">
+      <section className="mt-10 container mx-auto">
       <div className="collapse mt-10">
         <input type="checkbox" className="peer" />
         <div className="collapse-title bg-teal-500 text-primary-content peer-checked:bg-teal-500 peer-checked:text-secondary-content text-3xl">
@@ -39,6 +40,7 @@ const Blog = () => {
       </div>
        
     </section>
+   </div>
   );
 };
 
