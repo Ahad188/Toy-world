@@ -1,29 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
  
 
 const ToyTable = ({toy,index}) => {
-      
+      const navigate = useNavigate()
 
      const {toyName,price,quantity,_id} = toy;
  
      const handelDelate =(_id)=>{
           console.log(_id,"dellet this id");
-          // fetch(`http://localhost:5000/toys/${_id}`,{
-          //      method:'PATCH',
-          //      headers:{
-          //           'content-type':'application/json'
-          //      },
-          //      body: JSON.stringify(data)
-          // })
-          //  .then(res=>res.json())
-          //  .then(data=>console.log(data))
+          fetch(`http://localhost:5000/de/${_id}`,{
+               method: 'DELETE',
+                
+          })
+           .then(res=>res.json())
+           .then(data=>{
+               console.log(data);
+               if(data.deletedCount>0){
+                    alert('delate sec')
+               }
+           })
 
           
      }
-     const handelUpdate = (id)=>{
-          console.log(id);
-     }
+     
 
      return (
      
@@ -32,7 +32,7 @@ const ToyTable = ({toy,index}) => {
                <td>{toyName}</td>
                <td>{price}</td>
                <td>{quantity}</td>
-               <td className="cursor-pointer" onClick={()=>handelUpdate(_id)}><Link to='/update'>Update</Link></td>
+               <td className="cursor-pointer" onClick={()=>navigate(`/update/${_id}`)} ><Link to='/update'>Update</Link></td>
                <td className="cursor-pointer" onClick={()=>handelDelate(_id)}>Dellet</td>
 
           </tr>
