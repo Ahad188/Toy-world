@@ -1,6 +1,6 @@
 const Blog = () => {
   return (
-   <div className="w-[1640px] mx-auto">
+   <div className="w-[1240px] mx-auto">
       <section className="mt-10 container mx-auto">
       <div className="collapse mt-10">
         <input type="checkbox" className="peer" />
