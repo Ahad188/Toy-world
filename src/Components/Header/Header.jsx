@@ -41,7 +41,7 @@ const Header = () => {
                          <li>
                               {
                                    user ? <img className='h-10  w-10 rounded-full' src={user?.photoURL} alt="" /> :
-                                   <img className='h-10  w-10 rounded-full' src={im} alt="" />
+                                   <img className='h-10 mr-10 w-10 rounded-full' src={im} alt="" />
                               }
                               </li>
                     </ul>
