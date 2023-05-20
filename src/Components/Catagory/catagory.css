@@ -1,0 +1,17 @@
+.he{
+     display: grid;
+     grid-template-columns: repeat(3,1fr);
+     grid-gap: 10px;
+     /* border: 2px solid red; */
+ }
+ .hp{
+     border: 2px solid orange;
+     padding: 100px;
+     /* background-image: url(../../assets/Team/wal-g.jpg);
+     background-repeat: no-repeat;
+     background-size: cover; */
+      
+          /* background-color: rgb(249, 227, 199); */
+          background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+     
+}

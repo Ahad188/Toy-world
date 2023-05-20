@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
  
 
@@ -25,7 +27,8 @@ const Update = () => {
            .then(data=>{
                console.log(data);
                if(data.modifiedCount>0){
-                    alert('update data')
+                     
+                    toast("Update confirm")
                }
            })
      }
@@ -62,6 +65,7 @@ const Update = () => {
                       <input type="submit" className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-teal-400 rounded-md hover:bg-teal-600 focus:outline-none focus:bg-teal-600" value="Submit" />
                   
               </form>
+              <ToastContainer />
           </div>
      );
 };

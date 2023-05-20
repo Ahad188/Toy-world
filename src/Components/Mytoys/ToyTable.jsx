@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
  
 
 const ToyTable = ({toy,index}) => {
@@ -8,7 +9,7 @@ const ToyTable = ({toy,index}) => {
      const {toyName,price,quantity,_id} = toy;
  
      const handelDelate =(_id)=>{
-          console.log(_id,"dellet this id");
+          // console.log(_id,"dellet this id");
           fetch(`http://localhost:5000/de/${_id}`,{
                method: 'DELETE',
                 
@@ -17,7 +18,7 @@ const ToyTable = ({toy,index}) => {
            .then(data=>{
                console.log(data);
                if(data.deletedCount>0){
-                    alert('delate sec')
+                    toast("delate confirm")
                }
            })
 
@@ -26,16 +27,21 @@ const ToyTable = ({toy,index}) => {
      
 
      return (
-     
+          <>
           <tr>
                <th>{index + 1}</th>
                <td>{toyName}</td>
                <td>{price}</td>
                <td>{quantity}</td>
-               <td className="cursor-pointer" onClick={()=>navigate(`/update/${_id}`)} ><Link to='/update'>Update</Link></td>
-               <td className="cursor-pointer" onClick={()=>handelDelate(_id)}>Dellet</td>
-
+               <td className="cursor-pointer" onClick={()=>navigate(`/update/${_id}`)} >
+                    <Link to='/update'>Update</Link>
+               </td>
+               <td className="cursor-pointer" onClick={()=>handelDelate(_id)}>DELETE</td>
+              
           </tr>
+          <ToastContainer />
+          </>
+          
      );
 };
 
